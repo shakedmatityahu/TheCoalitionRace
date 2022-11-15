@@ -1,4 +1,4 @@
-#include "Agent.h"
+#include "../include/Agent.h"
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy)
 {

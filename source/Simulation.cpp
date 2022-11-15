@@ -1,4 +1,4 @@
-#include "Simulation.h"
+#include "../include/Simulation.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {

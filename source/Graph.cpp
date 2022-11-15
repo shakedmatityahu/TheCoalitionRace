@@ -1,4 +1,4 @@
-#include "Graph.h"
+#include "../include/Graph.h"
 
 Graph::Graph(vector<Party> vertices, vector<vector<int>> edges) : mVertices(vertices), mEdges(edges) 
 {
