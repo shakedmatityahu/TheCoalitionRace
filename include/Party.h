@@ -2,7 +2,6 @@
 #include <string>
 
 using std::string;
-
 class JoinPolicy;
 class Simulation;
 
@@ -12,6 +11,7 @@ enum State
     CollectingOffers,
     Joined
 };
+
 
 class Party
 {

@@ -1,5 +1,5 @@
 #include "../include/Agent.h"
-
+#include "Simulation.h"
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy)
 {
     // You can change the implementation of the constructor, but not the signature!
@@ -19,3 +19,7 @@ void Agent::step(Simulation &sim)
 {
     // TODO: implement this method
 }
+
+
+
+
