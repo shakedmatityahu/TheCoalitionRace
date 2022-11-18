@@ -13,7 +13,7 @@ public:
     int getEdgeWeight(int v1, int v2) const;
     int getNumVertices() const;
     const Party &getParty(int partyId) const;
-    vector<int> getNeighbors(vector<int> agnetCoalition);
+    vector<int> getNeighbors(vector<int> agnetCoalition) const;
 
 private:
     vector<Party> mVertices;

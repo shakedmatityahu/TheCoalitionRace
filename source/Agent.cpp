@@ -17,6 +17,14 @@ int Agent::getPartyId() const
 
 void Agent::step(Simulation &sim)
 {
+    vector<int> neighbors=sim.getGraph().getNeighbors(sim.getCoalitioByAgent(mAgentId)); //returns vector with all his neighbors
+    for (int x:neighbors)
+    {
+        //if(sim.getParty(x).getState()="Waiting" or sim.getParty(x).getState()="CollectingOffers")
+            //do something....
+
+    }
+
     // TODO: implement this method
 }
 

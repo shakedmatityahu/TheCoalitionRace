@@ -26,7 +26,7 @@ const Party &Graph::getParty(int partyId) const
     return mVertices[partyId];
 }
 
-vector<int> Graph::getNeighbors(vector<int> agnetCoalition)
+vector<int> Graph::getNeighbors(vector<int> agnetCoalition) const
 {
     vector<int> neighbors;
     std::vector<int>::iterator it;
