@@ -30,4 +30,5 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
+    int timer;
 };

@@ -3,6 +3,7 @@
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting) 
 {
     // You can change the implementation of the constructor, but not the signature!
+    timer = 0;
 }
 
 State Party::getState() const
@@ -27,5 +28,12 @@ const string & Party::getName() const
 
 void Party::step(Simulation &s)
 {
-    // TODO: implement this method
+    if (mState == CollectingOffers) {
+        if (timer > 2) {
+            // JOIN
+        }
+        else {
+            timer++;
+        }
+    }
 }
