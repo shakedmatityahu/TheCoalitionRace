@@ -10,8 +10,15 @@ using std::string;
 class Simulation
 {
 public:
+    //Rule of 5______________________
     Simulation(Graph g, vector<Agent> agents);
-    ~Simulation();
+    ~Simulation(); //destructor
+    Simulation (Simulation& other); //copy constructor according to rule of 5 we do need it but do we?
+    Simulation(Simulation && other) ;//move constructor
+    Simulation& operator= (const Simulation& other); // copy assignment operator
+    Simulation& operator=( Simulation& other); // move assignment operator
+
+    //______
     void init();
     void step();
     bool shouldTerminate() const;

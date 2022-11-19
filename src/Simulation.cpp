@@ -5,10 +5,89 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
     PartiesByCoalition = new vector<vector<int>>;
     // You can change the implementation of the constructor, but not the signature!
 }
- Simulation::~Simulation()
+ Simulation::~Simulation() //destructor
 {
     delete PartiesByCoalition;
 }
+
+Simulation::Simulation(Simulation& other) //copy constructor
+{
+    mAgents=vector<Agent>;
+    for(int i=0;i<other.mAgents.size();i++)
+    {
+        mAgents[i]=Agent(other.mAgents[i]);
+    }
+    PartiesByCoalition=new vector<vector<int>>;
+    for(int i=0;i<other.mAgents.size();i++) {
+        mAgents[i] = Agent(other.mAgents[i]);
+    }
+    mGraph=Graph(other.mGraph);
+    for(int i=0;i<other.size;i++)
+    {
+        for (int k=0;k<other[i].size;k++)
+        {
+            (*PartiesByCoalition)[i].push_front(other[i][k]);
+        }
+    }
+
+}
+
+Simulation Simulation::operator=(const Simulation &other) //assignment operator
+{
+    if(this==&other)
+        return *this;
+    mAgents=vector<Agent>;
+    for(int i=0;i<other.mAgents.size();i++)
+    {
+        mAgents[i]=Agent(other.mAgents[i]);
+    }
+    mGraph= Graph(other.mGraph);
+    PartiesByCoalition=new vector<vector<int>>;
+    for(int i=0;i<other.size;i++)
+    {
+        for (int k=0;k<other[i].size;k++)
+        {
+            (*PartiesByCoalition)[i].push_front(other[i][k]);
+        }
+    }
+
+}
+
+
+Simulation :: Simulation(Simulation && other) //move constructor other is a rvalue and therefore we dont need to delete it
+{
+    mGraph=Graph(other.mGraph);
+    mAgents=vector<Agent>;
+    for(int i=0;i<other.mAgents.size();i++)
+    {
+        mAgents[i]=Agent(other.mAgents[i]);
+    }
+    PartiesByCoalition=other.PartiesByCoalition;
+    other.PartiesByCoalition= nullptr;
+
+
+}
+
+Simulation& Simulation:: operator=(Simulation& other) // move assignment operator "Steal" Resources
+{
+    if(this==&other)
+        return *this;
+    if(mGraph)
+        delete mGraph;
+    if(PartiesByCoalition)
+        delete PartiesByCoalition;
+    mAgents=vector<Agent>;
+    for(int i=0;i<other.mAgents.size();i++)
+    {
+        mAgents[i]=Agent(other.mAgents[i]);
+    }
+    other.mAgents= nullptr;
+    mGraph=Graph(other.mGraph);
+    PartiesByCoalition=other.PartiesByCoalition;
+    other.PartiesByCoalition= nullptr;
+    return *this;
+}
+
 
 void Simulation::step()
 {
