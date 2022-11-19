@@ -9,7 +9,7 @@ void test1()
     simulation.step();
     simulation.step();
 }
- int main()
+ int main1()
  {
     test1();
  }
