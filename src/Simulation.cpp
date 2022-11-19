@@ -5,7 +5,7 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
     PartiesByCoalition = new vector<vector<int>>;
     // You can change the implementation of the constructor, but not the signature!
 }
- Simulation::~Simulation() //destructor
+ Simulation::~Simulation() //deconstructor
 {
     if (PartiesByCoalition)
      delete PartiesByCoalition;
@@ -55,8 +55,9 @@ Simulation& Simulation::operator=(const Simulation &other) //assignment operator
 }
 
 //move constructor other is a rvalue and therefore we dont need to delete it
-Simulation :: Simulation(Simulation && other) : mGraph(other.mGraph)
+Simulation :: Simulation(Simulation && other) : mGraph(other.mGraph), mAgents(other.mAgents)
 {
+
     for(int i=0;i<other.mAgents.size();i++)
     {
         mAgents[i]=Agent(other.mAgents[i]);
