@@ -1,6 +1,5 @@
 #include "../include/Party.h"
-
-Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting) 
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : timer(0), mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
@@ -19,6 +18,10 @@ int Party::getMandates() const
 {
     return mMandates;
 }
+int Party:: getTimer() const
+{
+    return timer;
+}
 
 const string & Party::getName() const
 {
@@ -29,3 +32,6 @@ void Party::step(Simulation &s)
 {
     // TODO: implement this method
 }
+
+
+

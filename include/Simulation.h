@@ -6,13 +6,13 @@
 #include "Agent.h"
 
 using std::string;
-using std::vector;
 
 class Simulation
 {
 public:
     Simulation(Graph g, vector<Agent> agents);
-
+    ~Simulation();
+    void init();
     void step();
     bool shouldTerminate() const;
 
@@ -20,8 +20,14 @@ public:
     const vector<Agent> &getAgents() const;
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
+    vector<int> getCoalitioByAgent(int agentId) ;
+
+
+
 
 private:
     Graph mGraph;
     vector<Agent> mAgents;
+    vector<vector<int>>* PartiesByCoalition;
+
 };
