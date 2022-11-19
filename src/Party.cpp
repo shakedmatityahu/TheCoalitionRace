@@ -18,10 +18,7 @@ int Party::getMandates() const
 {
     return mMandates;
 }
-int Party:: getTimer() const
-{
-    return timer;
-}
+
 
 const string & Party::getName() const
 {
