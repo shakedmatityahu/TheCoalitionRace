@@ -22,11 +22,11 @@ Simulation::Simulation(Simulation& other) //copy constructor
         mAgents[i] = Agent(other.mAgents[i]);
     }
     mGraph=Graph(other.mGraph);
-    for(int i=0;i<other.size;i++)
+    for(int i=0;i<other.PartiesByCoalition->size();i++)
     {
-        for (int k=0;k<other[i].size;k++)
+        for (int k=0;k<other.(*PartiesByCoalition)[i]->size;k++)
         {
-            (*PartiesByCoalition)[i].push_front(other[i][k]);
+            (*PartiesByCoalition)[i].push_front(other.(*PartiesByCoalition)[i][k]);
         }
     }
 
