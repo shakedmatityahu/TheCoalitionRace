@@ -3,7 +3,7 @@
 
 void test1()
 {
-    Simulation simulation=Parser::readSimulation("tests/01.json");
+    Simulation simulation=Parser::readSimulation("/home/parallels/CLionProjects/TheCoalitionRace/tests/01.json");
     simulation.step();
     simulation.step();
     simulation.step();

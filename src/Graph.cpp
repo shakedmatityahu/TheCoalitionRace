@@ -26,22 +26,19 @@ const Party &Graph::getParty(int partyId) const
     return mVertices[partyId];
 }
 
-vector<int> Graph::getNeighbors(vector<int> agnetCoalition) const
+vector<int> Graph::getNeighbors(int partyAgentId) const
 {
     vector<int> neighbors;
     std::vector<int>::iterator it;
 
-    for(int i=0;i<agnetCoalition.size();i++)
-    {
+
         for(int k=0;k<mEdges.size();k++)
         {
-            if((mEdges[agnetCoalition[i]][k]==1)&&(k!=i))
-            it = std::find (neighbors.begin(), neighbors.end(), k); //checks if element k in the neighbors already
-            if (it == neighbors.end())
+            if((mEdges[partyAgentId][k]==1)&&(k!=partyAgentId))
                 neighbors.push_back(k);
         }
 
-    }
+
     return neighbors;
 
 }

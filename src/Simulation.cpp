@@ -7,7 +7,8 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
 }
  Simulation::~Simulation() //destructor
 {
-    delete PartiesByCoalition;
+    if (PartiesByCoalition)
+     delete PartiesByCoalition;
 }
 
 Simulation::Simulation(Simulation& other) :mGraph(other.mGraph)//copy constructor
