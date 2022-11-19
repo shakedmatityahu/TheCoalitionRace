@@ -46,3 +46,4 @@ vector<int> Graph::getNeighbors(vector<int> agnetCoalition) const
 
 }
 
+
