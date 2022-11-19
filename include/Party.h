@@ -33,4 +33,5 @@ private:
     JoinPolicy *mJoinPolicy;
     State mState;
     vector<Offer> offers;
+    int timer;
 };
