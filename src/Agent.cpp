@@ -33,7 +33,7 @@ void Agent::step(Simulation& sim)
     for (int x=0;x<neighbors.size();x++)
     {
         if(sim.getParty(x).getState()==2)
-            neighbors.erase(neighbors.begin()+k+1); //remove all the element that arent "waiting" or "collectingOffers"
+            neighbors.erase(neighbors.begin()+x+1); //remove all the element that arent "waiting" or "collectingOffers"
          for(int i=0;i<sim.getParty(x).getOffers().size();x++) //remove parties thay my coalition already asked to join
          {
              if(sim.getParty(x).getOffers()[i]==getCoalitionId())

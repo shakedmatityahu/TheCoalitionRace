@@ -75,7 +75,7 @@ const vector<vector<int>> Simulation::getPartiesByCoalitions() const
     return PartiesByCoalition;
 }
 
-vector<int> Simulation::getCoalitioByAgent(int agentId)
+vector<int> Simulation::getCoalitionByAgent(int agentId)
 {
     return PartiesByCoalition[agentId];
 }

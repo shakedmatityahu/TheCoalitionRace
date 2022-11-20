@@ -16,7 +16,7 @@ class MandatesSelectionPolicy: public SelectionPolicy{
         int maxParty;
         for(int i=0;i<neighbors.size();i++)
         {
-            if(sim.getParty(i).getMandates()>maxMandates)
+            //if(sim.getParty(i).getMandates()>maxMandates)
                 maxParty=i;
         }
         return maxParty;
@@ -31,7 +31,7 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy{
         int maxParty;
         for(int i=0;i<neighbors.size();i++)
         {
-            if(sim.getGraph().getEdgeWeight(i,partyId)>maxEdge)
+            //if(sim.getGraph().getEdgeWeight(i,partyId)>maxEdge)
                 maxParty=i;
         }
         return maxParty;
