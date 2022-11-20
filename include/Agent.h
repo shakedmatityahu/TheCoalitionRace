@@ -2,6 +2,7 @@
 #include <vector>
 
 class SelectionPolicy;
+class Simulation;
 
 class Agent
 {
