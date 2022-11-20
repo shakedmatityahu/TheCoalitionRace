@@ -1,8 +1,7 @@
 #include "../include/Party.h"
-#include "../include/Offer.h"
 #include <vector>
 
-Party::Party(int id, string name, int mandates, JoinPolicy *jp, vector<Offer> offs) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(offs), timer(0)
+Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(), timer(0)
 {
     // You can change the implementation of the constructor, but not the signature!
 }

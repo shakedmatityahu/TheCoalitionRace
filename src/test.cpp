@@ -21,7 +21,13 @@ void test1()
 //    simulation.step();
 //    simulation.step();
 }
- int main()
+
+void testPartyStep()
+{
+    Simulation simulation = Parser::readSimulation("../tests/01.json");
+    simulation.getGraph().getParty(0).step();
+}
+ int main1()
  {
     test1();
  }

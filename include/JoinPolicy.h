@@ -12,4 +12,8 @@ public:
     void join(vector<Offer> offs, Party &p);
 };
 
-class LastOfferJoinPolicy : public JoinPolicy {};
+class LastOfferJoinPolicy : public JoinPolicy
+{
+public:
+    void join(vector<Offer> offs, Party &p);
+};
