@@ -4,9 +4,10 @@
 
 using std::string;
 using namespace std;
+
 class JoinPolicy;
 class Simulation;
-class Offer;
+//class Offer;
 
 enum State
 {
@@ -25,7 +26,6 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
-    vector<Offer> getOffers() const;
 
 private:
     int mId;
@@ -33,5 +33,6 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
-    vector<Offer> offers;
+    vector<int> offers;
+    int timer;
 };

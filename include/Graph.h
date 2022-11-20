@@ -16,10 +16,6 @@ public:
     int getNumVertices() const;
     const Party &getParty(int partyId) const;
     vector<int> getNeighbors(int partyAgentId) const;
-//    vector<Party>& getVertices();
-//    vector<vector<int>>& getEdges();
-//    void setVertices(Graph& other);
-//    void setEdges(Graph& other);
 
 private:
     vector<Party> mVertices;
