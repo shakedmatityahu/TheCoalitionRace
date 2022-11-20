@@ -1,6 +1,7 @@
 #pragma once
-#include "Simulation.h"
-#include "Party.h"
+
+class Simulation;
+
 class SelectionPolicy {
 
 public:

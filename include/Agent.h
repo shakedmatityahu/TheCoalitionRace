@@ -1,9 +1,5 @@
 #pragma once
-
 #include <vector>
-#include "Graph.h"
-#include "Party.h"
-#include "SelectionPolicy.h"
 
 class SelectionPolicy;
 
@@ -16,7 +12,7 @@ public:
     int getPartyId() const;
     int getId() const;
     int getCoalitionId() const;
-    void step(Simulation &);
+    void step(Simulation &sim);
     SelectionPolicy *getSelectionPolicy() const;
 
 private:

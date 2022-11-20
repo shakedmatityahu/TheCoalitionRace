@@ -1,4 +1,7 @@
 #pragma once
+#include <vector>
+
+class Graph;
 
 class JoinPolicy
 {

@@ -1,5 +1,7 @@
+#pragma once
 #include "../include/Party.h"
 #include "../include/Agent.h"
+#include "../include/JoinPolicy.h"
 #include <vector>
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(), timer(0)

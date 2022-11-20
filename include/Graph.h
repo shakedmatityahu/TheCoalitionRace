@@ -1,15 +1,14 @@
 #pragma once
 #include <vector>
-#include "Party.h"
-#include "Agent.h"
+#include "../include/Party.h"
 
-//using std::vector;
+class Party;
 
 class Graph
 {
 public:
-    Graph(vector<Party> vertices, vector<vector<int>> edges);
     Graph();
+    Graph (vector<Party> vertices, vector<vector<int>> edges);
     Graph& operator= (const Graph& other); // copy assignment operator
     int getMandates(int partyId) const;
     int getEdgeWeight(int v1, int v2) const;
