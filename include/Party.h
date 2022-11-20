@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "Offer.h"
 
 using std::string;
 using namespace std;
@@ -34,6 +33,6 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
-    vector<Offer> offers;
+    vector<int> offers;
     int timer;
 };
