@@ -7,7 +7,6 @@ using namespace std;
 
 class JoinPolicy;
 class Simulation;
-//class Offer;
 
 enum State
 {
@@ -26,6 +25,7 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
+    vector<int> getOffers() const;
 
 private:
     int mId;
