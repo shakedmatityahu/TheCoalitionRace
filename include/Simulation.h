@@ -36,6 +36,6 @@ public:
 private:
     Graph mGraph;
     vector<Agent> mAgents;
-    vector<vector<int>>* PartiesByCoalition;
+    vector<vector<int>> PartiesByCoalition;
 
 };

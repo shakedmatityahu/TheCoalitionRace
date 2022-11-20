@@ -27,7 +27,7 @@ const string & Party::getName() const
     return mName;
 }
 
-vector<Offer> & Party::getOffers() const
+vector<int>  Party::getOffers() const
 {
     return offers;
 }
