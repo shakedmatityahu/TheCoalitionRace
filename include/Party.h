@@ -7,7 +7,6 @@ using namespace std;
 
 class JoinPolicy;
 class Simulation;
-//class Offer;
 
 enum State
 {
