@@ -1,4 +1,5 @@
 #include "../include/Party.h"
+#include "../include/Agent.h"
 #include <vector>
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(), timer(0)
@@ -27,7 +28,7 @@ const string & Party::getName() const
     return mName;
 }
 
-vector<Offer> & Party::getOffers() const
+vector<int> Party::getOffers() const
 {
     return offers;
 }
@@ -36,9 +37,14 @@ void Party::step(Simulation &s)
 {
     if (mState == CollectingOffers) {
         if (timer > 2) {
-            // Choose offer, join, and return the relevant agent Id
-            int offeringAgnId = mJoinPolicy.join(offers, this);
-            s.getPartiesByCoalitions()[offeringAgnId].push_back(mId);
+            int coaIdToJoin = mJoinPolicy.join(offers, s.getPartiesByCoalitions(), s.getGraph());
+            mState = Joined;
+            // adding this party to the coalitions matrix
+            s.getPartiesByCoalitions()[coaIdToJoin].push_back(mId);
+            // cloning agent
+            Agent clonedAgn = Agent(s.getAgents().size(), mId, s.getAgents()[coaIdToJoin].getSelectionPolicy(), coaIdToJoin);
+            // adding agent to the vector of agents
+            s.getAgents().push_back(clonedAgn);
         }
         else {
             timer++;

@@ -26,6 +26,7 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
+    vector<int> getOffers() const;
 
 private:
     int mId;
