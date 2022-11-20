@@ -1,10 +1,12 @@
 #pragma once
 #include <string>
+#include <vector>
 
 using std::string;
 
 class JoinPolicy;
 class Simulation;
+class Offer;
 
 enum State
 {
@@ -30,5 +32,6 @@ private:
     int mMandates;
     JoinPolicy *mJoinPolicy;
     State mState;
+    vector<Offer> offers;
     int timer;
 };
