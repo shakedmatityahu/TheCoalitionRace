@@ -3,7 +3,7 @@
 #include <vector>
 
 using std::string;
-
+using namespace std;
 class JoinPolicy;
 class Simulation;
 class Offer;
@@ -25,6 +25,7 @@ public:
     int getMandates() const;
     void step(Simulation &s);
     const string &getName() const;
+    vector<Offer> getOffers() const;
 
 private:
     int mId;
