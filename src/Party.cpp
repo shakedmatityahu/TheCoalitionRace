@@ -1,9 +1,8 @@
 #include "../include/Party.h"
-
+#include "../include/Offer.h"
 #include <vector>
 
-Party::Party(int id, string name, int mandates, JoinPolicy *jp, vector<Offer> offs, int t) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(offs), timer(t)
-
+Party::Party(int id, string name, int mandates, JoinPolicy *jp, vector<Offer> offs) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(offs), timer(0)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
@@ -36,7 +35,16 @@ vector<Offer> & Party::getOffers() const
 
 void Party::step(Simulation &s)
 {
-    // TODO: implement this method
+    if (mState == CollectingOffers) {
+        if (timer > 2) {
+            // Choose offer, join, and return the relevant agent Id
+            int offeringAgnId = mJoinPolicy.join(offers, this);
+            s.getPartiesByCoalitions()[offeringAgnId].push_back(mId);
+        }
+        else {
+            timer++;
+        }
+    }
 }
 
 

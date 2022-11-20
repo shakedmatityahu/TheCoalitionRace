@@ -1,12 +1,14 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "Offer.h"
 
 using std::string;
+using namespace std;
 
 class JoinPolicy;
 class Simulation;
-class Offer;
+//class Offer;
 
 enum State
 {
