@@ -37,8 +37,9 @@ void Party::step(Simulation &s)
 {
     if (mState == CollectingOffers) {
         if (timer > 2) {
-            // JOIN
-
+            // Choose offer, join, and return the relevant agent Id
+            int offeringAgnId = mJoinPolicy.join(offers, this);
+            s.getPartiesByCoalitions()[offeringAgnId].push_back(mId);
         }
         else {
             timer++;
