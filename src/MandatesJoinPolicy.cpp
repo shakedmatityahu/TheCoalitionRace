@@ -1,4 +1,4 @@
-#include "../include/MandatesJoinPolicy.h"
+#include "../include/JoinPolicy.h"
 #include "../include/Party.h"
 #include "../include/Agent.h"
 
