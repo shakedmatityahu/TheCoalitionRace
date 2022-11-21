@@ -72,7 +72,7 @@ Graph Parser::parseGraph(const json &jGraph, const vector<Party> &parties)
     return Graph(parties, edges);
 }
 
- Parser::parseSimulation(const json &jSimulation)
+ Simulation Parser::parseSimulation(const json &jSimulation)
 {
     // create agents list
     vector<Agent> agents;
