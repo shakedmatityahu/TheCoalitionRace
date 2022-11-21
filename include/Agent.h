@@ -9,10 +9,12 @@ class Agent
 public:
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy);
     Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, int coaId);
-    // Rule of 3 -- need to implement rule of 5
+    // Rule of 5 5
     ~Agent() ;//destructor
     Agent(const Agent& other);//copy constructor
     Agent& operator=(const Agent& other);//copy assignment operator
+    Agent (Agent && other);//move constructor
+    Agent& operator=(Agent&& other);//move assignment operator
     int getPartyId() const;
     int getId() const;
     int getCoalitionId() const;

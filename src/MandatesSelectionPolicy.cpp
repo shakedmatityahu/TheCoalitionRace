@@ -13,3 +13,7 @@ int MandatesSelectionPolicy:: select (vector<int> neighbors, Simulation& sim, in
     }
     return maxParty;
 }
+char  MandatesSelectionPolicy:: WhoAmI()
+{
+    return 'M';
+}

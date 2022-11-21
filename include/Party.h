@@ -23,6 +23,7 @@ public:
     ~Party(); //destructor
     Party(const Party& other); //copy constructor
     Party& operator=(const Party& other); //copy assignment operator
+
     State getState() const;
     void setState(State state);
     int getMandates() const;

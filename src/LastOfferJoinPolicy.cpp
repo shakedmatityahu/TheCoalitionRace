@@ -5,3 +5,8 @@ int LastOfferJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, 
     // the method selects the coalition that made the last offer
     return offs[offs.size() - 1];
 }
+char  LastOfferJoinPolicy:: WhoAmI()
+{
+    return 'L';
+}
+

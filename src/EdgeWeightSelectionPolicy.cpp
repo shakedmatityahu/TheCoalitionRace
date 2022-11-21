@@ -13,3 +13,7 @@ int EdgeWeightSelectionPolicy:: select (vector<int> neighbors, Simulation& sim,i
     }
     return maxParty;
 }
+char  EdgeWeightSelectionPolicy:: WhoAmI()
+{
+return 'E';
+}

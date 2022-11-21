@@ -23,7 +23,10 @@ Agent:: Agent(const Agent& other)//copy constructor
 {
     mAgentId=other.mAgentId;
     mPartyId=other.mPartyId;
-    mSelectionPolicy=other.mSelectionPolicy; //?
+    if(other.mSelectionPolicy->whoAmI()=='M')
+        mSelectionPolicy=new MandatesSelectionPolicy;
+    else
+        mSelectionPolicy=new EdgeWeightSelectionPolicy;
 }
 
 Agent& Agent:: operator=(const Agent& other)//copy assignment operator
@@ -33,11 +36,31 @@ Agent& Agent:: operator=(const Agent& other)//copy assignment operator
             delete mSelectionPolicy;
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
-        mSelectionPolicy=other.mSelectionPolicy; //?
+        if(other.mSelectionPolicy->whoAmI()=='M')
+            mSelectionPolicy=new MandatesSelectionPolicy;
+        else
+            mSelectionPolicy=new EdgeWeightSelectionPolicy;
     }
     return *this;
 }
+ Agent ::Agent (Agent && other)//move constructor
+{
+    mAgentId=other.mAgentId;
+    mPartyId=other.mPartyId;
+    mSelectionPolicy=other.mSelectionPolicy;
+    other.mSelectionPolicy= nullptr;
+}
 
+Agent& Agent:: operator=(Agent&& other)//move assignment operator
+{
+    if(mSelectionPolicy)
+        delete mSelectionPolicy;
+    mAgentId=other.mAgentId;
+    mPartyId=other.mPartyId;
+    mSelectionPolicy=other.mSelectionPolicy;
+    other.mSelectionPolicy= nullptr;
+    return *this;
+}
 
 
 int Agent::getId() const
