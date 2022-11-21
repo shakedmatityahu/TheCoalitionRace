@@ -2,7 +2,10 @@
 #include "../include/Party.h"
 #include "../include/Agent.h"
 #include "../include/JoinPolicy.h"
+#include "../include/Simulation.h"
 #include <vector>
+
+class Simulation;
 
 Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName(name), mMandates(mandates), mJoinPolicy(jp), mState(Waiting), offers(), timer(0)
 {
@@ -74,7 +77,7 @@ void Party::step(Simulation &s)
 {
     if (mState == CollectingOffers) {
         if (timer > 2) {
-            int coaIdToJoin = mJoinPolicy.join(offers, s.getPartiesByCoalitions(), s.getGraph());
+            int coaIdToJoin = mJoinPolicy->join(offers, s.getPartiesByCoalitions(), s.getGraph());
             mState = Joined;
             // adding this party to the coalitions matrix
             s.getPartiesByCoalitions()[coaIdToJoin].push_back(mId);

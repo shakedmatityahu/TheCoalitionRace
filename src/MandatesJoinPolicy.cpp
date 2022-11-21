@@ -1,7 +1,7 @@
 #include "../include/JoinPolicy.h"
 #include "../include/Graph.h"
 
-void MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> &partiesBy, Graph &g) {
+int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, const Graph &g) {
     // the method selects the coalition with the largest number of mandates
     int max = 0;
     int sum = 0;
