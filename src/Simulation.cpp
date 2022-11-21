@@ -1,10 +1,11 @@
 #pragma once
 #include "../include/Simulation.h"
 #include "../include/Agent.h"
+#include "../include/Party.h"
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
 {
-    PartiesByCoalition = vector<vector<int>>;
+    PartiesByCoalition = vector<vector<int>>();
     // You can change the implementation of the constructor, but not the signature!
 }
 
@@ -15,10 +16,7 @@ void Simulation::step()
     {
         mAgents[i].step(*this);
     }
-    for(int i=0;i<getGraph().getNumVertices();i++)
-    {
-        getGraph().getParty(i).step(*this);
-    }
+    mGraph.stepParty(*this);
 }
 void Simulation:: init()
 {

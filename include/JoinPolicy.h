@@ -2,6 +2,7 @@
 #include <vector>
 
 class Graph;
+using std::vector;
 
 class JoinPolicy
 {

@@ -15,7 +15,7 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
             curParty = partiesBy[i][j];
             sum += g.getMandates(curParty);
         }
-        if sum > max {
+        if (sum > max) {
             max = sum;
             chosenCoa = i;
         };

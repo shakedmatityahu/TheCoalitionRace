@@ -15,6 +15,7 @@ public:
     int getNumVertices() const;
     const Party &getParty(int partyId) const;
     vector<int> getNeighbors(int partyAgentId) const;
+    void stepParty(Simulation &s);
 
 private:
     vector<Party> mVertices;

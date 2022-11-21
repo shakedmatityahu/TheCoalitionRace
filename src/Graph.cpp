@@ -43,7 +43,14 @@ vector<int> Graph::getNeighbors(int partyAgentId) const
         }
 
     return neighbors;
+}
 
+void Graph::stepParty(Simulation &s)
+{
+    for(int i=0; i<mVertices.size(); i++)
+    {
+        mVertices[i].step(s);
+    }
 }
 
 
