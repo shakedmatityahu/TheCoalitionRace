@@ -85,5 +85,9 @@ void Simulation:: addPartyToCoalition (int coalitionId, int partyId)
 {
     PartiesByCoalition[coalitionId].push_back(partyId);
 }
+void Simulation::addAgentToVector(Agent agent) {
+    mAgents.push_back(agent);
+}
+
 
 

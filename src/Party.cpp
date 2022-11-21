@@ -84,7 +84,7 @@ void Party::step(Simulation &s)
             // cloning agent
             Agent clonedAgn = Agent(s.getAgents().size(), mId, s.getAgents()[coaIdToJoin].getSelectionPolicy(), coaIdToJoin);
             // adding agent to the vector of agents
-            s.getAgents().push_back(clonedAgn);
+            s.addAgentToVector(clonedAgn);
         }
         else {
             timer++;
