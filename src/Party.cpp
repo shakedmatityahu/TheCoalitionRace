@@ -23,7 +23,10 @@ Party:: Party(const Party& other)//copy constructor
     mId=other.mId;
     mName=other.mName;
     mMandates=other.mMandates;
-    mJoinPolicy=other.mJoinPolicy;//?
+    if(other.mJoinPolicy->whoAmI()=='M')
+        mJoinPolicy=new MandatesJoinPolicy;
+    else
+        mJoinPolicy=new LastOfferJoinPolicy;
     mState=other.mState;
     offers=other.offers;
     timer=other.timer;
@@ -38,13 +41,45 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
         mId=other.mId;
         mName=other.mName;
         mMandates=other.mMandates;
-        mJoinPolicy=other.mJoinPolicy;//?
+        if(other.mJoinPolicy->whoAmI()=='M')
+            mJoinPolicy=new MandatesJoinPolicy;
+        else
+            mJoinPolicy=new LastOfferJoinPolicy;
         mState=other.mState;
         offers=other.offers;
         timer=other.timer;
 
     }
     return *this;
+}
+
+Party::Party (Party& other)//move constructor
+{
+    mId = other.mId;
+    mName = other.mName;
+    mMandates = other.mMandates;
+    mJoinPolicy=other.mJoinPolicy;
+    mState=other.mState;
+    offers=other.offers;
+    timer=other.timer;
+    other.mJoinPolicy= nullptr;
+}
+
+Party& Party:: operator=(Party && other)//move assignment operator
+{
+    if(mJoinPolicy)
+        delete mJoinPolicy;
+    mId = other.mId;
+    mName = other.mName;
+    mMandates = other.mMandates;
+    mJoinPolicy=other.mJoinPolicy;
+    mState=other.mState;
+    offers=other.offers;
+    timer=other.timer;
+    other.mJoinPolicy= nullptr;
+    return *this;
+
+
 }
 
 State Party::getState() const

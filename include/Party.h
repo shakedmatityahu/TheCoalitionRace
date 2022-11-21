@@ -19,11 +19,12 @@ class Party
 {
 public:
     Party(int id, string name, int mandates, JoinPolicy *);
-    // Rule of 3 -- need to implement rule of 5
+    // Rule of 5
     ~Party(); //destructor
     Party(const Party& other); //copy constructor
     Party& operator=(const Party& other); //copy assignment operator
-
+    Party (Party& other);//move constructor
+    &Party operator=(Party && other);//move assignment operator
     State getState() const;
     void setState(State state);
     int getMandates() const;
