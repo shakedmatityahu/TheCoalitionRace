@@ -20,7 +20,7 @@ Party:: Party(const Party& other)//copy constructor
     mId=other.mId;
     mName=other.mName;
     mMandates=other.mMandates;
-    mJoinPolicy=new JoinPolicy(other.mJoinPolicy);//?
+    mJoinPolicy=other.mJoinPolicy;//?
     mState=other.mState;
     offers=other.offers;
     timer=other.timer;
@@ -35,7 +35,7 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
         mId=other.mId;
         mName=other.mName;
         mMandates=other.mMandates;
-        mJoinPolicy=new JoinPolicy(other.mJoinPolicy);//?
+        mJoinPolicy=other.mJoinPolicy;//?
         mState=other.mState;
         offers=other.offers;
         timer=other.timer;

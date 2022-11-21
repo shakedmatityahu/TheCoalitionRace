@@ -23,7 +23,7 @@ Agent:: Agent(const Agent& other)//copy constructor
 {
     mAgentId=other.mAgentId;
     mPartyId=other.mPartyId;
-    mSelectionPolicy=new SelectionPolicy(other.mSelectionPolicy); //?
+    mSelectionPolicy=other.mSelectionPolicy; //?
 }
 
 Agent& Agent:: operator=(const Agent& other)//copy assignment operator
@@ -33,7 +33,7 @@ Agent& Agent:: operator=(const Agent& other)//copy assignment operator
             delete mSelectionPolicy;
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
-        mSelectionPolicy = new SelectionPolicy(other.mSelectionPolicy);
+        mSelectionPolicy=other.mSelectionPolicy; //?
     }
     return *this;
 }
