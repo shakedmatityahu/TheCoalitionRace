@@ -8,6 +8,41 @@ Party::Party(int id, string name, int mandates, JoinPolicy *jp) : mId(id), mName
 {
     // You can change the implementation of the constructor, but not the signature!
 }
+Party:: ~Party() //destructor
+{
+    if(mJoinPolicy)
+        delete mJoinPolicy;
+}
+
+Party:: Party(const Party& other)//copy constructor
+{
+
+    mId=other.mId;
+    mName=other.mName;
+    mMandates=other.mMandates;
+    mJoinPolicy=new JoinPolicy(other.mJoinPolicy);//?
+    mState=other.mState;
+    offers=other.offers;
+    timer=other.timer;
+
+}
+
+Party& Party:: operator=(const Party& other)//copy assignment operator
+{
+    if(this!=&other) {
+        if (mJoinPolicy)
+            delete mJoinPolicy;
+        mId=other.mId;
+        mName=other.mName;
+        mMandates=other.mMandates;
+        mJoinPolicy=new JoinPolicy(other.mJoinPolicy);//?
+        mState=other.mState;
+        offers=other.offers;
+        timer=other.timer;
+
+    }
+    return *this;
+}
 
 State Party::getState() const
 {
