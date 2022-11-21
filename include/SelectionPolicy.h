@@ -10,13 +10,15 @@ public:
 
 class MandatesSelectionPolicy: public SelectionPolicy{
 
-    public: int select (vector<int> neighbors, Simulation& sim,int partyId) override;
+public:
+    int select (vector<int> neighbors, Simulation& sim,int partyId);
 
 };
 
 class EdgeWeightSelectionPolicy: public SelectionPolicy{
 
-    public: int select (vector<int> neighbors, Simulation& sim,int partyId) override;
+public:
+    int select (vector<int> neighbors, Simulation& sim,int partyId);
 
 
 };
