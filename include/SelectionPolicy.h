@@ -18,7 +18,7 @@ class MandatesSelectionPolicy: public SelectionPolicy{
 public:
     int select (vector<int> neighbors, Simulation& sim,int partyId);
     ~MandatesSelectionPolicy();
-    char whoAmI() override;
+    char whoAmI();
 
 
 };
@@ -28,7 +28,7 @@ class EdgeWeightSelectionPolicy: public SelectionPolicy{
 public:
     int select (vector<int> neighbors, Simulation& sim,int partyId);
     ~EdgeWeightSelectionPolicy();
-    char whoAmI() override;
+    char whoAmI();
 
 
 };

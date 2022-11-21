@@ -18,7 +18,7 @@ Agent:: ~Agent() //destructor
         delete mSelectionPolicy;
 }
 //copy constructor
-Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId)
+Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),coalitionId(other.coalitionId)
 {
     if(other.mSelectionPolicy->whoAmI()=='M')
         mSelectionPolicy=new MandatesSelectionPolicy;
@@ -41,7 +41,7 @@ Agent& Agent:: operator=(const Agent& other)
     return *this;
 }
 //move constructor
- Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId)
+ Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),coalitionId(other.coalitionId)
 {
     mSelectionPolicy=other.mSelectionPolicy;
     other.mSelectionPolicy= nullptr;

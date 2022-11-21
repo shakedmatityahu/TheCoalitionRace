@@ -23,7 +23,7 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
     return chosenCoa;
 }
 
-char  MandatesJoinPolicy:: WhoAmI()
+char  MandatesJoinPolicy:: whoAmI()
 {
 return 'M';
 }
