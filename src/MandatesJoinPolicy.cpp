@@ -9,9 +9,11 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
     int curParty = -1;
 
     // iterating only the coalitions that offered
-    for (int i = 0; i < offs.size(); i++) {
+    int sizeOffers=offs.size();
+    for (int i = 0; i < sizeOffers; i++) {
         // iterating the party numbers in that coalition
-        for (int j = 0; i < partiesBy[i].size(); i++) {
+        int sizeCoalition=partiesBy[i].size();
+        for (int j = 0; i <sizeCoalition; i++) {
             curParty = partiesBy[i][j];
             sum += g.getMandates(curParty);
         }

@@ -1,4 +1,3 @@
-#pragma once
 #include "../include/Party.h"
 #include "../include/Agent.h"
 #include "../include/JoinPolicy.h"
@@ -17,7 +16,7 @@ Party:: ~Party() //destructor
         delete mJoinPolicy;
 }
 //copy constructor
-Party:: Party(const Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mState(other.mState),offers(other.offers),timer(other.timer)
+Party:: Party(const Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mJoinPolicy(),mState(other.mState),offers(other.offers),timer(other.timer)
 {
     if(other.mJoinPolicy->whoAmI()=='M')
         mJoinPolicy=new MandatesJoinPolicy;
@@ -45,7 +44,7 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
     return *this;
 }
 //move constructor
-Party::Party (Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mState(other.mState),offers(other.offers),timer(other.timer)
+Party::Party (Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mJoinPolicy(),mState(other.mState),offers(other.offers),timer(other.timer)
 {
     mJoinPolicy=other.mJoinPolicy;
     mState=other.mState;

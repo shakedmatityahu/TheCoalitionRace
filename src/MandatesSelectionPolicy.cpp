@@ -1,4 +1,3 @@
-#pragma once
 #include "../include/SelectionPolicy.h"
 #include "../include/Simulation.h"
 
@@ -6,7 +5,8 @@ int MandatesSelectionPolicy:: select (vector<int> neighbors, Simulation& sim, in
 {
     int maxMandates=0;
     int maxParty;
-    for(int i=0;i<neighbors.size();i++)
+    int neighborsSize=neighbors.size();
+    for(int i=0;i<neighborsSize;i++)
     {
         if(sim.getParty(i).getMandates()>maxMandates)
             maxParty=i;

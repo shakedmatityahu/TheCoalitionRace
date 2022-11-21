@@ -1,4 +1,3 @@
-#pragma once
 #include "../include/SelectionPolicy.h"
 #include "../include/Simulation.h"
 
@@ -6,7 +5,8 @@ int EdgeWeightSelectionPolicy:: select (vector<int> neighbors, Simulation& sim,i
 {
     int maxEdge=0;
     int maxParty;
-    for(int i=0;i<neighbors.size();i++)
+    int neighborsSize=neighbors.size();
+    for(int i=0;i<neighborsSize;i++)
     {
         if(sim.getGraph().getEdgeWeight(i,partyId)>maxEdge)
             maxParty=i;

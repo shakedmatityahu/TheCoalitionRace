@@ -18,7 +18,7 @@ Agent:: ~Agent() //destructor
         delete mSelectionPolicy;
 }
 //copy constructor
-Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),coalitionId(other.coalitionId)
+Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),mSelectionPolicy(),coalitionId(other.coalitionId)
 {
     if(other.mSelectionPolicy->whoAmI()=='M')
         mSelectionPolicy=new MandatesSelectionPolicy;
@@ -41,7 +41,7 @@ Agent& Agent:: operator=(const Agent& other)
     return *this;
 }
 //move constructor
- Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),coalitionId(other.coalitionId)
+ Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),mSelectionPolicy(),coalitionId(other.coalitionId)
 {
     mSelectionPolicy=other.mSelectionPolicy;
     other.mSelectionPolicy= nullptr;
@@ -77,22 +77,24 @@ int Agent::getCoalitionId() const
 void Agent::step(Simulation& sim)
 {
 
-    static int i=0; //self- check
-    std::cout <<"agent id " << mAgentId << " Party id "<<mPartyId<<  " step " << ++i<<std::endl;
+//    static int i=0; //self- check
+//    std::cout <<"agent id " << mAgentId << " Party id "<<mPartyId<<  " step " << ++i<<std::endl;
 
     vector<int> neighbors=sim.getGraph().getNeighbors(mPartyId); //returns vector with all his neighbors
-    for (int x=0;x<neighbors.size();x++)
+    int size=neighbors.size();
+    for (int x=0;x<size;x++)
     {
         if(sim.getParty(x).getState()==2)
             neighbors.erase(neighbors.begin()+x+1); //remove all the element that arent "waiting" or "collectingOffers"
-         for(int i=0;i<sim.getParty(x).getOffers().size();x++) //remove parties thay my coalition already asked to join
-         {
-             if(sim.getParty(x).getOffers()[i]==getCoalitionId())
-             {
-                 neighbors.erase(neighbors.begin()+i+1);
-                 break;
-             }
-         }
+        int sizeOffers=sim.getParty(x).getOffers().size();
+        for(int i=0;i<sizeOffers;x++) //remove parties thay my coalition already asked to join
+        {
+            if(sim.getParty(x).getOffers()[i]==getCoalitionId())
+            {
+                neighbors.erase(neighbors.begin()+i+1);
+                break;
+            }
+        }
     }
     //now the agents need to select which party he will ask to join
     int selectP=mSelectionPolicy->select(neighbors,sim,mPartyId);

@@ -3,7 +3,8 @@
 #include "../include/Party.h"
 #include <vector>
 
-Graph::Graph(){}
+Graph::Graph() :mVertices(), mEdges()
+{}
 
 Graph::Graph(vector<Party> vertices, vector<vector<int>> edges) : mVertices(vertices), mEdges(edges)
 {
@@ -35,8 +36,8 @@ vector<int> Graph::getNeighbors(int partyAgentId) const
     vector<int> neighbors;
     std::vector<int>::iterator it;
 
-
-        for(int k=0;k<mEdges.size();k++)
+        int sizeEdges=mEdges.size();
+        for(int k=0;k<sizeEdges;k++)
         {
             if((mEdges[partyAgentId][k]==1)&&(k!=partyAgentId))
                 neighbors.push_back(k);
@@ -47,7 +48,8 @@ vector<int> Graph::getNeighbors(int partyAgentId) const
 
 void Graph::stepParty(Simulation &s)
 {
-    for(int i=0; i<mVertices.size(); i++)
+    int sizeVer=mVertices.size();
+    for(int i=0; i<sizeVer; i++)
     {
         mVertices[i].step(s);
     }

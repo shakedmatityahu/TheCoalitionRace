@@ -1,9 +1,8 @@
-#pragma once
 #include "../include/Simulation.h"
 #include "../include/Agent.h"
 #include "../include/Party.h"
 
-Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents) 
+Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents),PartiesByCoalition()
 {
     PartiesByCoalition = vector<vector<int>>();
     // You can change the implementation of the constructor, but not the signature!
@@ -12,7 +11,8 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
 
 void Simulation::step()
 {
-    for(int i=0; i<mAgents.size(); i++)
+    int sizeAgents=mAgents.size();
+    for(int i=0; i<sizeAgents; i++)
     {
         mAgents[i].step(*this);
     }
@@ -21,8 +21,8 @@ void Simulation::step()
 void Simulation:: init()
 {
 
-    int k=0;
-    for (int i=0; i<mAgents.size(); i++)
+    int sizeAgents=mAgents.size();
+    for(int i=0; i<sizeAgents; i++)
     {
         PartiesByCoalition[i][0]=mAgents[i].getPartyId();
 
@@ -31,10 +31,12 @@ void Simulation:: init()
 bool Simulation::shouldTerminate() const
 {
     int countParties=0;
-    for(int i=0; i<PartiesByCoalition.size();i++)
+    int sizePartiesVector=PartiesByCoalition.size();
+    for(int i=0; i<sizePartiesVector;i++)
     {
         int sumMandates=0;
-        for(int k=0;k<PartiesByCoalition[i].size();k++) //check if any coalition reached 61 mandates
+        int sizePartiesVectorRow=PartiesByCoalition[i].size();
+        for(int k=0;k<sizePartiesVectorRow;k++) //check if any coalition reached 61 mandates
         {
             int partyId=PartiesByCoalition[i][k];
             countParties++;
