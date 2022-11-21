@@ -5,6 +5,8 @@ Graph::Graph(vector<Party> vertices, vector<vector<int>> edges) : mVertices(vert
 {
     // You can change the implementation of the constructor, but not the signature!
 }
+Graph::Graph(){}
+
 
 int Graph::getMandates(int partyId) const
 {
@@ -26,23 +28,46 @@ const Party &Graph::getParty(int partyId) const
     return mVertices[partyId];
 }
 
-vector<int> Graph::getNeighbors(vector<int> agnetCoalition) const
+vector<int> Graph::getNeighbors(int partyAgentId) const
 {
     vector<int> neighbors;
     std::vector<int>::iterator it;
 
-    for(int i=0;i<agnetCoalition.size();i++)
-    {
+
         for(int k=0;k<mEdges.size();k++)
         {
-            if((mEdges[agnetCoalition[i]][k]==1)&&(k!=i))
-            it = std::find (neighbors.begin(), neighbors.end(), k); //checks if element k in the neighbors already
-            if (it == neighbors.end())
+            if((mEdges[partyAgentId][k]==1)&&(k!=partyAgentId))
                 neighbors.push_back(k);
         }
 
-    }
+
     return neighbors;
 
 }
+
+//vector<Party> &Graph::getVertices() {
+//    return mVertices;
+//}
+//
+//vector<vector<int>> &Graph::getEdges() {
+//    return mEdges;
+//}
+//
+//void Graph::setVertices(Graph &other) {
+//    mVertices=other.mVertices;
+//}
+//
+//void Graph::setEdges(Graph &other) {
+//    mEdges=other.mEdges;
+
+//}
+//copy assignment operator , this method is just for simulation operator=
+Graph &Graph::operator=(const Graph &other) {
+    mEdges=other.mEdges;
+    mVertices=other.mVertices;
+    return *this;
+
+
+}
+
 
