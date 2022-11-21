@@ -13,6 +13,32 @@ Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgen
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, int coaId) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), coalitionId(coaId) {
 }
+Agent:: ~Agent() //destructor
+{
+    if(mSelectionPolicy)
+        delete mSelectionPolicy;
+}
+
+Agent:: Agent(const Agent& other)//copy constructor
+{
+    mAgentId=other.mAgentId;
+    mPartyId=other.mPartyId;
+    mSelectionPolicy=new SelectionPolicy(other.mSelectionPolicy); //?
+}
+
+Agent& Agent:: operator=(const Agent& other)//copy assignment operator
+{
+    if(this!=&other) {
+        if (mSelectionPolicy)
+            delete mSelectionPolicy;
+        mAgentId = other.mAgentId;
+        mPartyId = other.mPartyId;
+        mSelectionPolicy = new SelectionPolicy(other.mSelectionPolicy);
+    }
+    return *this;
+}
+
+
 
 int Agent::getId() const
 {
