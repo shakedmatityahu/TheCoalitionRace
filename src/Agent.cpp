@@ -5,10 +5,9 @@
 #include "../include/Party.h"
 #include <algorithm>
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy)
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy),coalitionId(agentId)
 {
     // You can change the implementation of the constructor, but not the signature!
-    coalitionId = agentId;
 }
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy, int coaId) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), coalitionId(coaId) {
@@ -18,18 +17,16 @@ Agent:: ~Agent() //destructor
     if(mSelectionPolicy)
         delete mSelectionPolicy;
 }
-
-Agent:: Agent(const Agent& other)//copy constructor
+//copy constructor
+Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId)
 {
-    mAgentId=other.mAgentId;
-    mPartyId=other.mPartyId;
     if(other.mSelectionPolicy->whoAmI()=='M')
         mSelectionPolicy=new MandatesSelectionPolicy;
     else
         mSelectionPolicy=new EdgeWeightSelectionPolicy;
 }
-
-Agent& Agent:: operator=(const Agent& other)//copy assignment operator
+//copy assignment operator
+Agent& Agent:: operator=(const Agent& other)
 {
     if(this!=&other) {
         if (mSelectionPolicy)
@@ -43,10 +40,9 @@ Agent& Agent:: operator=(const Agent& other)//copy assignment operator
     }
     return *this;
 }
- Agent ::Agent (Agent && other)//move constructor
+//move constructor
+ Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId)
 {
-    mAgentId=other.mAgentId;
-    mPartyId=other.mPartyId;
     mSelectionPolicy=other.mSelectionPolicy;
     other.mSelectionPolicy= nullptr;
 }

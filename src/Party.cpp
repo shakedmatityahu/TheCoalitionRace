@@ -16,21 +16,13 @@ Party:: ~Party() //destructor
     if(mJoinPolicy)
         delete mJoinPolicy;
 }
-
-Party:: Party(const Party& other)//copy constructor
+//copy constructor
+Party:: Party(const Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mState(other.mState),offers(other.offers),timer(other.timer)
 {
-
-    mId=other.mId;
-    mName=other.mName;
-    mMandates=other.mMandates;
     if(other.mJoinPolicy->whoAmI()=='M')
         mJoinPolicy=new MandatesJoinPolicy;
     else
         mJoinPolicy=new LastOfferJoinPolicy;
-    mState=other.mState;
-    offers=other.offers;
-    timer=other.timer;
-
 }
 
 Party& Party:: operator=(const Party& other)//copy assignment operator
@@ -52,16 +44,11 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
     }
     return *this;
 }
-
-Party::Party (Party& other)//move constructor
+//move constructor
+Party::Party (Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mState(other.mState),offers(other.offers),timer(other.timer)
 {
-    mId = other.mId;
-    mName = other.mName;
-    mMandates = other.mMandates;
     mJoinPolicy=other.mJoinPolicy;
     mState=other.mState;
-    offers=other.offers;
-    timer=other.timer;
     other.mJoinPolicy= nullptr;
 }
 
