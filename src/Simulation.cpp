@@ -81,3 +81,9 @@ vector<int> Simulation::getCoalitionByAgent(int agentId)
     return PartiesByCoalition[agentId];
 }
 
+void Simulation:: addPartyToCoalition (int coalitionId, int partyId)
+{
+    PartiesByCoalition[coalitionId].push_back(partyId);
+}
+
+

@@ -22,6 +22,7 @@ public:
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
     vector<int> getCoalitionByAgent(int agentId) ;
+    void addPartyToCoalition (int coalitionId,int partyId);
 
 private:
     Graph mGraph;

@@ -80,7 +80,7 @@ void Party::step(Simulation &s)
             int coaIdToJoin = mJoinPolicy->join(offers, s.getPartiesByCoalitions(), s.getGraph());
             mState = Joined;
             // adding this party to the coalitions matrix
-            s.getPartiesByCoalitions()[coaIdToJoin].push_back(mId);
+            s.addPartyToCoalition(coaIdToJoin,mId);
             // cloning agent
             Agent clonedAgn = Agent(s.getAgents().size(), mId, s.getAgents()[coaIdToJoin].getSelectionPolicy(), coaIdToJoin);
             // adding agent to the vector of agents
