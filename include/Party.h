@@ -24,7 +24,7 @@ public:
     Party(const Party& other); //copy constructor
     Party& operator=(const Party& other); //copy assignment operator
     Party (Party& other);//move constructor
-    &Party operator=(Party && other);//move assignment operator
+    Party& operator=(Party && other);//move assignment operator
     State getState() const;
     void setState(State state);
     int getMandates() const;
