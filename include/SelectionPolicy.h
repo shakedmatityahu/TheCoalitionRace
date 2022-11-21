@@ -1,6 +1,9 @@
 #pragma once
-#include "Simulation.h"
-#include "Party.h"
+#include <vector>
+
+using  std::vector;
+class Simulation;
+
 class SelectionPolicy {
 
 public:

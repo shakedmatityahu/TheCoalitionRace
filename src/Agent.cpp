@@ -1,12 +1,11 @@
 #include <iostream>
 #include "../include/Agent.h"
-#include "Simulation.h"
+#include "../include/SelectionPolicy.h"
+#include "../include/Simulation.h"
+#include "../include/Party.h"
 #include <algorithm>
 
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy),coalitionId(agentId)
-
-#include "Party.h"
-Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy), 
+Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy)
 {
     // You can change the implementation of the constructor, but not the signature!
     coalitionId = agentId;

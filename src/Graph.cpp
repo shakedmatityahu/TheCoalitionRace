@@ -1,12 +1,14 @@
 #include <algorithm>
 #include "../include/Graph.h"
+#include "../include/Party.h"
+#include <vector>
+
+Graph::Graph(){}
 
 Graph::Graph(vector<Party> vertices, vector<vector<int>> edges) : mVertices(vertices), mEdges(edges)
 {
     // You can change the implementation of the constructor, but not the signature!
 }
-Graph::Graph(){}
-
 
 int Graph::getMandates(int partyId) const
 {
@@ -40,33 +42,7 @@ vector<int> Graph::getNeighbors(int partyAgentId) const
                 neighbors.push_back(k);
         }
 
-
     return neighbors;
-
-}
-
-//vector<Party> &Graph::getVertices() {
-//    return mVertices;
-//}
-//
-//vector<vector<int>> &Graph::getEdges() {
-//    return mEdges;
-//}
-//
-//void Graph::setVertices(Graph &other) {
-//    mVertices=other.mVertices;
-//}
-//
-//void Graph::setEdges(Graph &other) {
-//    mEdges=other.mEdges;
-
-//}
-//copy assignment operator , this method is just for simulation operator=
-Graph &Graph::operator=(const Graph &other) {
-    mEdges=other.mEdges;
-    mVertices=other.mVertices;
-    return *this;
-
 
 }
 

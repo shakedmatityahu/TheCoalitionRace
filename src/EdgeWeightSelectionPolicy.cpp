@@ -1,5 +1,7 @@
 #pragma once
-#include "SelectionPolicy.h"
+#include "../include/SelectionPolicy.h"
+#include "../include/Simulation.h"
+
 int EdgeWeightSelectionPolicy:: select (vector<int> neighbors, Simulation& sim,int partyId)
 {
     int maxEdge=0;

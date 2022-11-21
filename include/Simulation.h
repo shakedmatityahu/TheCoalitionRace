@@ -1,11 +1,11 @@
 #pragma once
-
 #include <vector>
-
-#include "Graph.h"
-#include "Agent.h"
+#include "../include/Graph.h"
 
 using std::string;
+using std::vector;
+class Agent;
+class Party;
 
 class Simulation
 {
@@ -22,9 +22,6 @@ public:
     const Party &getParty(int partyId) const;
     const vector<vector<int>> getPartiesByCoalitions() const;
     vector<int> getCoalitionByAgent(int agentId) ;
-
-
-
 
 private:
     Graph mGraph;

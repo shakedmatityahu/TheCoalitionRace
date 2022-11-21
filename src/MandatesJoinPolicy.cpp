@@ -1,5 +1,4 @@
 #include "../include/JoinPolicy.h"
-#include "../include/Party.h"
 #include "../include/Graph.h"
 
 void MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> &partiesBy, Graph &g) {
