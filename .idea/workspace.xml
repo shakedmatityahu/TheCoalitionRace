@@ -18,21 +18,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graph.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/JoinPolicy.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/JoinPolicy.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Parser.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Party.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Party.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/SelectionPolicy.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SelectionPolicy.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Simulation.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cRace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/JoinPolicy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Parser.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Party.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SelectionPolicy.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Graph.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +116,7 @@
       <workItem from="1669123749103" duration="373000" />
       <workItem from="1669124157807" duration="1548000" />
       <workItem from="1669125745004" duration="190000" />
-      <workItem from="1669126040344" duration="2237000" />
+      <workItem from="1669126040344" duration="2511000" />
     </task>
     <servers />
   </component>
