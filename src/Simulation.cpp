@@ -17,6 +17,7 @@ void Simulation::step()
         mAgents[i].step(*this);
     }
     mGraph.stepParty(*this);
+
 }
 void Simulation:: init()
 {
@@ -35,11 +36,11 @@ bool Simulation::shouldTerminate() const
     for(int i=0; i<sizePartiesVector;i++)
     {
         int sumMandates=0;
+        countParties++;
         int sizePartiesVectorRow=PartiesByCoalition[i].size();
         for(int k=0;k<sizePartiesVectorRow;k++) //check if any coalition reached 61 mandates
         {
             int partyId=PartiesByCoalition[i][k];
-            countParties++;
             Party p=getGraph().getParty(partyId);
             sumMandates=+(p).getMandates();
         }
@@ -88,6 +89,10 @@ void Simulation:: addPartyToCoalition (int coalitionId, int partyId)
 void Simulation::addAgentToVector(Agent agent) {
     mAgents.push_back(agent);
 }
+void Simulation::simAddOffer(int coalitionId, int partyId) {
+    mGraph.graphAddOffer(coalitionId,partyId);
+}
+
 
 
 

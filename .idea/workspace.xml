@@ -19,7 +19,24 @@
   <component name="ChangeListManager">
     <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Agent.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Graph.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/JoinPolicy.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/JoinPolicy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Parser.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Parser.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Party.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Party.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/SelectionPolicy.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/SelectionPolicy.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Simulation.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cRace" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Graph.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Party.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Party.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Simulation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Party.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Party.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SelectionPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionPolicy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +108,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TheCoalitionRace" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/bin/cRace">
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TheCoaltionRace" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/bin/cRace">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -135,41 +152,31 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Simulation.cpp</url>
-          <line>16</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Party.cpp</url>
-          <line>98</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
-          <line>78</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
-          <line>103</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/SelectionPolicy.cpp</url>
           <line>5</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/SelectionPolicy.cpp</url>
-          <line>28</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
+          <line>78</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Party.cpp</url>
+          <line>101</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/main.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
+          <line>83</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CLionNativeAppRunConfigurationType">
-        <watch expression="sim.getGraph().getEdgeWeight(neighbors[i],partyId" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

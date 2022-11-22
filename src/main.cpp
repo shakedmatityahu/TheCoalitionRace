@@ -1,6 +1,6 @@
 #include <iostream>
 #include <iomanip>
-#include "../include/Parser.h"
+#include "Parser.h"
 
 using std::cout;
 using std::endl;

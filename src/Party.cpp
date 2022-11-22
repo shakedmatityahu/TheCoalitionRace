@@ -89,14 +89,18 @@ const string & Party::getName() const
     return mName;
 }
 
-vector<int> Party::getOffers() const
+vector<int> Party::getOffers()
 {
     return offers;
 }
 
+
 void Party::step(Simulation &s)
 {
-    if (mState == CollectingOffers) {
+    if(!offers.empty())
+        mState=CollectingOffers;
+    if (mState == CollectingOffers)
+    {
         if (timer > 2) {
             int coaIdToJoin = mJoinPolicy->join(offers, s.getPartiesByCoalitions(), s.getGraph());
             mState = Joined;

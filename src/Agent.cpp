@@ -18,7 +18,7 @@ Agent:: ~Agent() //destructor
         delete mSelectionPolicy;
 }
 //copy constructor
-Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),mSelectionPolicy(),coalitionId(other.coalitionId)
+Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),mSelectionPolicy(),coalitionId(other.coalitionId)
 {
     if(other.mSelectionPolicy->whoAmI()=='M')
         mSelectionPolicy=new MandatesSelectionPolicy;
@@ -41,7 +41,7 @@ Agent& Agent:: operator=(const Agent& other)
     return *this;
 }
 //move constructor
- Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mAgentId),mSelectionPolicy(),coalitionId(other.coalitionId)
+ Agent ::Agent (Agent && other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),mSelectionPolicy(),coalitionId(other.coalitionId)
 {
     mSelectionPolicy=other.mSelectionPolicy;
     other.mSelectionPolicy= nullptr;
@@ -102,7 +102,9 @@ void Agent::step(Simulation& sim)
     }
     //now the agents need to select which party he will ask to join
     int selectP=mSelectionPolicy->select(partiesToOffer,sim,mPartyId);
-    sim.getParty(selectP).getOffers().push_back(getCoalitionId());
+    if(selectP!=-1)
+        sim.simAddOffer(coalitionId,selectP);
+
 }
 
 SelectionPolicy* Agent::getSelectionPolicy() const

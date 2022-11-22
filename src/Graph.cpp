@@ -32,7 +32,7 @@ const Party &Graph::getParty(int partyId) const
 }
 
 bool Graph::isNeighbor(int partyAgentId,int maybeNeighbor) const {
-    if(mEdges[partyAgentId][maybeNeighbor]==1)
+    if(mEdges[partyAgentId][maybeNeighbor]>0)
         return true;
     return false;
 }
@@ -44,6 +44,11 @@ void Graph::stepParty(Simulation &s)
     {
         mVertices[i].step(s);
     }
+}
+
+void Graph::graphAddOffer(int coalitionId,int partyId)
+{
+    mVertices[partyId].getOffers().push_back(coalitionId);
 }
 
 

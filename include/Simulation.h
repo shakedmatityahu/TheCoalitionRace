@@ -24,6 +24,8 @@ public:
     vector<int> getCoalitionByAgent(int agentId) ;
     void addPartyToCoalition (int coalitionId,int partyId);
     void addAgentToVector (Agent agent);
+    void simAddOffer(int coalitionId, int partyId);
+
 
 private:
     Graph mGraph;
