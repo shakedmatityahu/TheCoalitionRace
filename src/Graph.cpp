@@ -31,19 +31,10 @@ const Party &Graph::getParty(int partyId) const
     return mVertices[partyId];
 }
 
-vector<int> Graph::getNeighbors(int partyAgentId) const
-{
-    vector<int> neighbors;
-    std::vector<int>::iterator it;
-
-        int sizeEdges=mEdges.size();
-        for(int k=0;k<sizeEdges;k++)
-        {
-            if((mEdges[partyAgentId][k]==1)&&(k!=partyAgentId))
-                neighbors.push_back(k);
-        }
-
-    return neighbors;
+bool Graph::isNeighbor(int partyAgentId,int maybeNeighbor) const {
+    if(mEdges[partyAgentId][maybeNeighbor]==1)
+        return true;
+    return false;
 }
 
 void Graph::stepParty(Simulation &s)

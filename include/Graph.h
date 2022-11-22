@@ -14,7 +14,7 @@ public:
     int getEdgeWeight(int v1, int v2) const;
     int getNumVertices() const;
     const Party &getParty(int partyId) const;
-    vector<int> getNeighbors(int partyAgentId) const;
+    bool isNeighbor(int partyAgentId,int maybeNeighbor) const;
     void stepParty(Simulation &s);
 
 private:

@@ -76,28 +76,32 @@ int Agent::getCoalitionId() const
 
 void Agent::step(Simulation& sim)
 {
-
-//    static int i=0; //self- check
-//    std::cout <<"agent id " << mAgentId << " Party id "<<mPartyId<<  " step " << ++i<<std::endl;
-
-    vector<int> neighbors=sim.getGraph().getNeighbors(mPartyId); //returns vector with all his neighbors
-    int size=neighbors.size();
+    vector<int> partiesToOffer=vector<int>;
+    int size=sim.getGraph().getNumVertices();
     for (int x=0;x<size;x++)
     {
-        if(sim.getParty(x).getState()==2)
-            neighbors.erase(neighbors.begin()+x+1); //remove all the element that arent "waiting" or "collectingOffers"
-        int sizeOffers=sim.getParty(x).getOffers().size();
-        for(int i=0;i<sizeOffers;x++) //remove parties thay my coalition already asked to join
+        //first condition
+        if(sim.getGraph().isNeighbor(mPartyId,x))
         {
-            if(sim.getParty(x).getOffers()[i]==getCoalitionId())
+            //second condition
+            if(sim.getParty(x).getState()!=2)
             {
-                neighbors.erase(neighbors.begin()+i+1);
-                break;
-            }
+                int sizeOffers=sim.getParty(x).getOffers().size();
+                bool flag=true;
+                for(int i=0;i<sizeOffers;x++) //remove parties thay my coalition already asked to join
+                {
+                    //third condition
+                    if (sim.getParty(x).getOffers()[i] == getCoalitionId()) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if(flag)
+                    partiesToOffer.push_back(x);
         }
     }
     //now the agents need to select which party he will ask to join
-    int selectP=mSelectionPolicy->select(neighbors,sim,mPartyId);
+    int selectP=mSelectionPolicy->select(partiesToOffer,sim,mPartyId);
     sim.getParty(selectP).getOffers().push_back(getCoalitionId());
 }
 
