@@ -86,7 +86,7 @@ void Agent::step(Simulation& sim)
             if(sim.getParty(x).getState()!=2) {
                 int sizeOffers = sim.getParty(x).getOffers().size();
                 bool flag = true;
-                for (int i = 0; i < sizeOffers; x++) //remove parties that my coalition already asked to join
+                for (int i = 0; i < sizeOffers; i++) //remove parties that my coalition already asked to join
                 {
                     //third condition
                     if (sim.getParty(x).getOffers()[i] == getCoalitionId()) {
@@ -103,7 +103,6 @@ void Agent::step(Simulation& sim)
     int selectP=mSelectionPolicy->select(partiesToOffer,sim,mPartyId);
     if(selectP!=-1)
         sim.simAddOffer(coalitionId,selectP);
-
 }
 
 SelectionPolicy* Agent::getSelectionPolicy() const

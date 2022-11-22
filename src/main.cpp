@@ -19,8 +19,11 @@ int main(int argc, char **argv)
 
     // run simulation and store json state after each iteration
     vector<json> outPerIter = {Parser::makeJson(simulation)};
+    simulation.init();
+    int simNum = 0;
     while (!simulation.shouldTerminate())
     {
+        cout << "iteration number " << simNum++;
         simulation.step();
         outPerIter.push_back(Parser::makeJson(simulation));
     }

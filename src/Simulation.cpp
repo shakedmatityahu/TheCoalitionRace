@@ -21,12 +21,10 @@ void Simulation::step()
 }
 void Simulation:: init()
 {
-
     int sizeAgents=mAgents.size();
     for(int i=0; i<sizeAgents; i++)
     {
         PartiesByCoalition[i][0]=mAgents[i].getPartyId();
-
     }
 }
 bool Simulation::shouldTerminate() const
