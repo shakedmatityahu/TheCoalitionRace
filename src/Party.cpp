@@ -1,6 +1,7 @@
 #include "../include/Party.h"
 #include "../include/Agent.h"
 #include "../include/JoinPolicy.h"
+#include "../include/SelectionPolicy.h"
 #include "../include/Simulation.h"
 #include <vector>
 
@@ -107,7 +108,7 @@ void Party::step(Simulation &s)
             // adding this party to the coalitions matrix
             s.addPartyToCoalition(coaIdToJoin,mId);
             // cloning agent
-            Agent clonedAgn = Agent(s.getAgents().size(), mId, s.getAgents()[coaIdToJoin].getSelectionPolicy(), coaIdToJoin);
+            Agent clonedAgn = Agent(s.getAgents().size(), mId, (s.getAgents()[coaIdToJoin].getSelectionPolicy())->clone(), coaIdToJoin);
             // adding agent to the vector of agents
             s.addAgentToVector(clonedAgn);
         }

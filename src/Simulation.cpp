@@ -24,7 +24,9 @@ void Simulation:: init()
     int sizeAgents=mAgents.size();
     for(int i=0; i<sizeAgents; i++)
     {
-        PartiesByCoalition[i][0]=mAgents[i].getPartyId();
+        vector<int> vec = vector<int>();
+        vec.push_back(mAgents[i].getPartyId());
+        PartiesByCoalition.push_back(vec);
     }
 }
 bool Simulation::shouldTerminate() const
