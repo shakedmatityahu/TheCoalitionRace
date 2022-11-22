@@ -18,16 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/JoinPolicy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Parser.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Party.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/SelectionPolicy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SelectionPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionPolicy.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +91,7 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TheCoalitionRace" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="bin/cRace">
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TheCoalitionRace" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="$PROJECT_DIR$/bin/cRace">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>
@@ -116,7 +108,12 @@
       <workItem from="1669123749103" duration="373000" />
       <workItem from="1669124157807" duration="1548000" />
       <workItem from="1669125745004" duration="190000" />
-      <workItem from="1669126040344" duration="2511000" />
+      <workItem from="1669126040344" duration="2607000" />
+      <workItem from="1669128690529" duration="537000" />
+      <workItem from="1669129254577" duration="102000" />
+      <workItem from="1669129377033" duration="261000" />
+      <workItem from="1669129659841" duration="267000" />
+      <workItem from="1669129949854" duration="66000" />
     </task>
     <servers />
   </component>
@@ -147,7 +144,32 @@
           <line>98</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
+          <line>78</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
+          <line>103</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/SelectionPolicy.cpp</url>
+          <line>5</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/SelectionPolicy.cpp</url>
+          <line>28</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CLionNativeAppRunConfigurationType">
+        <watch expression="sim.getGraph().getEdgeWeight(neighbors[i],partyId" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
