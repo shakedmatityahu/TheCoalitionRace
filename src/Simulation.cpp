@@ -36,13 +36,13 @@ bool Simulation::shouldTerminate() const
     for(int i=0; i<sizePartiesVector;i++)
     {
         int sumMandates=0;
-        countParties++;
         int sizePartiesVectorRow=PartiesByCoalition[i].size();
         for(int k=0;k<sizePartiesVectorRow;k++) //check if any coalition reached 61 mandates
         {
             int partyId=PartiesByCoalition[i][k];
             Party p=getGraph().getParty(partyId);
-            sumMandates=+(p).getMandates();
+            sumMandates+=(p).getMandates();
+            countParties++;
         }
         if(sumMandates>=61)
             return true;
