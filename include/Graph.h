@@ -16,6 +16,8 @@ public:
     const Party &getParty(int partyId) const;
     bool isNeighbor(int partyAgentId,int maybeNeighbor) const;
     void stepParty(Simulation &s);
+    void graphAddOffer(int coalitionId, int partyId);
+
 
 private:
     vector<Party> mVertices;
