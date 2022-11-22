@@ -10,7 +10,6 @@ public:
     virtual int select(vector<int> neighbors, Simulation& sim, int partyId)=0;
     virtual ~SelectionPolicy();
     virtual char whoAmI()=0;
-
 };
 
 class MandatesSelectionPolicy: public SelectionPolicy{
@@ -19,8 +18,6 @@ public:
     int select (vector<int> neighbors, Simulation& sim,int partyId);
     ~MandatesSelectionPolicy();
     char whoAmI();
-
-
 };
 
 class EdgeWeightSelectionPolicy: public SelectionPolicy{
@@ -29,6 +26,4 @@ public:
     int select (vector<int> neighbors, Simulation& sim,int partyId);
     ~EdgeWeightSelectionPolicy();
     char whoAmI();
-
-
 };
