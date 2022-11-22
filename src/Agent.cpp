@@ -2,7 +2,6 @@
 #include "../include/Agent.h"
 #include "../include/SelectionPolicy.h"
 #include "../include/Simulation.h"
-#include "../include/Party.h"
 #include <algorithm>
 
 Agent::Agent(int agentId, int partyId, SelectionPolicy *selectionPolicy) : mAgentId(agentId), mPartyId(partyId), mSelectionPolicy(selectionPolicy),coalitionId(agentId)
@@ -81,13 +80,13 @@ void Agent::step(Simulation& sim)
     for (int x=0;x<size;x++)
     {
         //first condition
-        if(sim.getGraph().isNeighbor(mPartyId,x))
+        if(sim.getGraph().isNeighbor(mPartyId,x) && x != mPartyId)
         {
             //second condition
             if(sim.getParty(x).getState()!=2) {
                 int sizeOffers = sim.getParty(x).getOffers().size();
                 bool flag = true;
-                for (int i = 0; i < sizeOffers; x++) //remove parties thay my coalition already asked to join
+                for (int i = 0; i < sizeOffers; x++) //remove parties that my coalition already asked to join
                 {
                     //third condition
                     if (sim.getParty(x).getOffers()[i] == getCoalitionId()) {

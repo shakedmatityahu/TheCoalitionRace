@@ -89,7 +89,7 @@ const string & Party::getName() const
     return mName;
 }
 
-vector<int> Party::getOffers()
+vector<int> Party::getOffers() const
 {
     return offers;
 }
@@ -115,6 +115,11 @@ void Party::step(Simulation &s)
             timer++;
         }
     }
+}
+
+void Party::partyAddOffer(int coalitionId)
+{
+    offers.push_back(coalitionId);
 }
 
 

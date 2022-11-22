@@ -48,7 +48,14 @@ void Graph::stepParty(Simulation &s)
 
 void Graph::graphAddOffer(int coalitionId,int partyId)
 {
-    mVertices[partyId].getOffers().push_back(coalitionId);
+    mVertices[partyId].partyAddOffer(coalitionId);
 }
+
+
+
+
+
+
+
 
 

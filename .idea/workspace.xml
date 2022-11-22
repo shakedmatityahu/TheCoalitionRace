@@ -28,15 +28,10 @@
       <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Simulation.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" afterPath="$PROJECT_DIR$/bin/cRace" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Graph.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Graph.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Party.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Party.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Simulation.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Simulation.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graph.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Party.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Party.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SelectionPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionPolicy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +126,8 @@
       <workItem from="1669129377033" duration="261000" />
       <workItem from="1669129659841" duration="267000" />
       <workItem from="1669129949854" duration="66000" />
+      <workItem from="1669135567294" duration="570000" />
+      <workItem from="1669136158669" duration="1670000" />
     </task>
     <servers />
   </component>
@@ -158,10 +155,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
-          <line>78</line>
+          <line>77</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <condition expression="mId==2" language="ObjectiveC" />
           <url>file://$PROJECT_DIR$/src/Party.cpp</url>
           <line>101</line>
           <option name="timeStamp" value="22" />
@@ -172,9 +170,19 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Graph.cpp</url>
+          <line>50</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
-          <line>83</line>
-          <option name="timeStamp" value="27" />
+          <line>91</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/Agent.cpp</url>
+          <line>87</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
