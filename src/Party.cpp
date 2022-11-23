@@ -98,10 +98,11 @@ vector<int> Party::getOffers() const
 
 void Party::step(Simulation &s)
 {
-    if(!offers.empty())
+    if(!offers.empty() && mState==Waiting)
         mState=CollectingOffers;
     if (mState == CollectingOffers)
     {
+        timer++;
         if (timer > 2) {
             int coaIdToJoin = mJoinPolicy->join(offers, s.getPartiesByCoalitions(), s.getGraph());
             mState = Joined;
@@ -111,9 +112,6 @@ void Party::step(Simulation &s)
             Agent clonedAgn = Agent(s.getAgents().size(), mId, (s.getAgents()[coaIdToJoin].getSelectionPolicy())->clone(), coaIdToJoin);
             // adding agent to the vector of agents
             s.addAgentToVector(clonedAgn);
-        }
-        else {
-            timer++;
         }
     }
 }

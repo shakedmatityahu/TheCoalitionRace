@@ -11,12 +11,12 @@ Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgen
 
 void Simulation::step()
 {
+    mGraph.stepParty(*this);
     int sizeAgents=mAgents.size();
     for(int i=0; i<sizeAgents; i++)
     {
         mAgents[i].step(*this);
     }
-    mGraph.stepParty(*this);
 
 }
 void Simulation:: init()
