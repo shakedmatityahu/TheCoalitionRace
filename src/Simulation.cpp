@@ -4,7 +4,14 @@
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents),PartiesByCoalition()
 {
-    PartiesByCoalition = vector<vector<int>>();
+//    PartiesByCoalition = vector<vector<int>>();
+    int sizeAgents=mAgents.size();
+    for(int i=0; i<sizeAgents; i++)
+    {
+        vector<int> vec = vector<int>();
+        vec.push_back(mAgents[i].getPartyId());
+        PartiesByCoalition.push_back(vec);
+    }
     // You can change the implementation of the constructor, but not the signature!
 }
 
@@ -21,13 +28,13 @@ void Simulation::step()
 }
 void Simulation:: init()
 {
-    int sizeAgents=mAgents.size();
-    for(int i=0; i<sizeAgents; i++)
-    {
-        vector<int> vec = vector<int>();
-        vec.push_back(mAgents[i].getPartyId());
-        PartiesByCoalition.push_back(vec);
-    }
+//    int sizeAgents=mAgents.size();
+//    for(int i=0; i<sizeAgents; i++)
+//    {
+//        vector<int> vec = vector<int>();
+//        vec.push_back(mAgents[i].getPartyId());
+//        PartiesByCoalition.push_back(vec);
+//    }
 }
 bool Simulation::shouldTerminate() const
 {
