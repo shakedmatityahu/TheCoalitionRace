@@ -18,17 +18,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="vector">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/JoinPolicy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/JoinPolicy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SelectionPolicy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SelectionPolicy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JoinPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/JoinPolicy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Party.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Party.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SelectionPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionPolicy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,18 +96,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CLionExternalConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CLionExternalConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -171,13 +165,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/SelectionPolicy.cpp</url>
-          <line>5</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/Simulation.cpp</url>
-          <line>84</line>
+          <line>83</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>

@@ -51,7 +51,6 @@ Agent& Agent:: operator=(Agent&& other)//move assignment operator
     return *this;
 }
 
-
 int Agent::getId() const
 {
     return mAgentId;

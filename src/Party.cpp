@@ -34,7 +34,6 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
         mState=other.mState;
         offers=other.offers;
         timer=other.timer;
-
     }
     return *this;
 }

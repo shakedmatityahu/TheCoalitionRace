@@ -23,7 +23,6 @@ void Simulation::step()
     {
         mAgents[i].step(*this);
     }
-
 }
 
 bool Simulation::shouldTerminate() const
@@ -83,9 +82,11 @@ void Simulation:: addPartyToCoalition (int coalitionId, int partyId)
 {
     PartiesByCoalition[coalitionId].push_back(partyId);
 }
+
 void Simulation::addAgentToVector(Agent agent) {
     mAgents.push_back(agent);
 }
+
 void Simulation::simAddOffer(int coalitionId, int partyId) {
     mGraph.graphAddOffer(coalitionId,partyId);
 }
