@@ -4,7 +4,6 @@
 
 Simulation::Simulation(Graph graph, vector<Agent> agents) : mGraph(graph), mAgents(agents),PartiesByCoalition()
 {
-//    PartiesByCoalition = vector<vector<int>>();
     int sizeAgents=mAgents.size();
     for(int i=0; i<sizeAgents; i++)
     {
@@ -26,16 +25,7 @@ void Simulation::step()
     }
 
 }
-void Simulation:: init()
-{
-//    int sizeAgents=mAgents.size();
-//    for(int i=0; i<sizeAgents; i++)
-//    {
-//        vector<int> vec = vector<int>();
-//        vec.push_back(mAgents[i].getPartyId());
-//        PartiesByCoalition.push_back(vec);
-//    }
-}
+
 bool Simulation::shouldTerminate() const
 {
     int countParties=0;

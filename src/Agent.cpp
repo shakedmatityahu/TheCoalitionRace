@@ -19,10 +19,7 @@ Agent:: ~Agent() //destructor
 //copy constructor
 Agent:: Agent(const Agent& other):mAgentId(other.mAgentId),mPartyId(other.mPartyId),mSelectionPolicy(other.mSelectionPolicy->clone()),coalitionId(other.coalitionId)
 {
-//    if(other.mSelectionPolicy->whoAmI()=='M')
-//        mSelectionPolicy=new MandatesSelectionPolicy;
-//    else
-//        mSelectionPolicy=new EdgeWeightSelectionPolicy;
+
 }
 //copy assignment operator
 Agent& Agent:: operator=(const Agent& other)
