@@ -29,10 +29,7 @@ Agent& Agent:: operator=(const Agent& other)
             delete mSelectionPolicy;
         mAgentId = other.mAgentId;
         mPartyId = other.mPartyId;
-        if(other.mSelectionPolicy->whoAmI()=='M')
-            mSelectionPolicy=new MandatesSelectionPolicy;
-        else
-            mSelectionPolicy=new EdgeWeightSelectionPolicy;
+        mSelectionPolicy = other.mSelectionPolicy->clone();
     }
     return *this;
 }

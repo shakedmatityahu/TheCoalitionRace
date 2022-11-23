@@ -8,7 +8,7 @@
 }</component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="TheCoalitionRace" targetName="all" />
+      <config projectName="Party.cpp" targetName="all" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -17,19 +17,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="">
+    <list default="true" id="bee713c1-3fe5-474d-8a23-176d92dc17f7" name="Changes" comment="vector">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Agent.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Graph.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/JoinPolicy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Parser.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Party.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/SelectionPolicy.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Simulation.o" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Simulation.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/cRace" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/JoinPolicy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/JoinPolicy.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SelectionPolicy.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SelectionPolicy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Agent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Agent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Simulation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Simulation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JoinPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/JoinPolicy.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Party.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Party.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SelectionPolicy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SelectionPolicy.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +49,22 @@
   <component name="MakefileLocalSettings">
     <option name="availableProjects">
       <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="Party.cpp" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="TheCoalitionRace" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
         <entry>
           <key>
             <ExternalProjectPojo>
@@ -102,7 +116,12 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="TheCoalitionRace" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="bin/cRace">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="all" type="CLionNativeAppRunConfigurationType" PROGRAM_PARAMS="tests/01.json" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Party.cpp" TARGET_NAME="all" CONFIG_NAME="all" version="1" RUN_PATH="bin/cRace">
       <method v="2">
         <option name="CLION.COMPOUND.BUILD" enabled="true" />
       </method>

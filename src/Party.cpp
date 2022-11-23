@@ -17,12 +17,9 @@ Party:: ~Party() //destructor
         delete mJoinPolicy;
 }
 //copy constructor
-Party:: Party(const Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mJoinPolicy(),mState(other.mState),offers(other.offers),timer(other.timer)
+Party:: Party(const Party& other):mId(other.mId),mName(other.mName),mMandates(other.mMandates),mJoinPolicy(other.mJoinPolicy->clone()),mState(other.mState),offers(other.offers),timer(other.timer)
 {
-    if(other.mJoinPolicy->whoAmI()=='M')
-        mJoinPolicy=new MandatesJoinPolicy;
-    else
-        mJoinPolicy=new LastOfferJoinPolicy;
+
 }
 
 Party& Party:: operator=(const Party& other)//copy assignment operator
@@ -33,10 +30,7 @@ Party& Party:: operator=(const Party& other)//copy assignment operator
         mId=other.mId;
         mName=other.mName;
         mMandates=other.mMandates;
-        if(other.mJoinPolicy->whoAmI()=='M')
-            mJoinPolicy=new MandatesJoinPolicy;
-        else
-            mJoinPolicy=new LastOfferJoinPolicy;
+        mJoinPolicy = other.mJoinPolicy->clone();
         mState=other.mState;
         offers=other.offers;
         timer=other.timer;
@@ -65,8 +59,6 @@ Party& Party:: operator=(Party && other)//move assignment operator
     timer=other.timer;
     other.mJoinPolicy= nullptr;
     return *this;
-
-
 }
 
 State Party::getState() const
@@ -83,7 +75,6 @@ int Party::getMandates() const
 {
     return mMandates;
 }
-
 
 const string & Party::getName() const
 {

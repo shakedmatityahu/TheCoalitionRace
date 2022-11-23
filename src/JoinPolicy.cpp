@@ -25,16 +25,17 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
     return chosenCoa;
 }
 
-char  MandatesJoinPolicy:: whoAmI()
+MandatesJoinPolicy* MandatesJoinPolicy::clone() const
 {
-return 'M';
+    return new MandatesJoinPolicy(*this);
 }
 
 int LastOfferJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, const Graph &g) {
     // the method selects the coalition that made the last offer
     return offs[offs.size() - 1];
 }
-char  LastOfferJoinPolicy:: whoAmI()
+
+LastOfferJoinPolicy* LastOfferJoinPolicy::clone() const
 {
-    return 'L';
+    return new LastOfferJoinPolicy(*this);
 }

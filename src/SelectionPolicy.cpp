@@ -14,11 +14,6 @@ int MandatesSelectionPolicy:: select (vector<int> neighbors, Simulation& sim, in
     return maxParty;
 }
 
-char  MandatesSelectionPolicy:: whoAmI()
-{
-    return 'M';
-}
-
 MandatesSelectionPolicy* MandatesSelectionPolicy::clone() const
 {
     return new MandatesSelectionPolicy(*this);
@@ -38,11 +33,6 @@ int EdgeWeightSelectionPolicy:: select (vector<int> neighbors, Simulation& sim,i
         }
     }
     return maxParty;
-}
-
-char EdgeWeightSelectionPolicy:: whoAmI()
-{
-    return 'E';
 }
 
 EdgeWeightSelectionPolicy* EdgeWeightSelectionPolicy::clone() const
