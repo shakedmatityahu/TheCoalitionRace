@@ -18,8 +18,8 @@ int main(int argc, char **argv)
     Simulation simulation = Parser::readSimulation(argv[1]);
 
     // run simulation and store json state after each iteration
-    vector<json> outPerIter = {Parser::makeJson(simulation)};
     simulation.init();
+    vector<json> outPerIter = {Parser::makeJson(simulation)};
     int simNum = 0;
     while (!simulation.shouldTerminate())
     {
