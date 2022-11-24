@@ -12,14 +12,15 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
     int sizeOffers=offs.size();
     for (int i = 0; i < sizeOffers; i++) {
         // iterating the party numbers in that coalition
-        int sizeCoalition=partiesBy[i].size();
+        sum = 0;
+        int sizeCoalition=partiesBy[offs[i]].size();
         for (int j = 0; j <sizeCoalition; j++) {
-            curParty = partiesBy[i][j];
+            curParty = partiesBy[offs[i]][j];
             sum += g.getMandates(curParty);
         }
         if (sum > max) {
             max = sum;
-            chosenCoa = i;
+            chosenCoa = offs[i];
         };
     }
     return chosenCoa;
