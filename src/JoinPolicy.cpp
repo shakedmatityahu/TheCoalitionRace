@@ -13,7 +13,7 @@ int MandatesJoinPolicy::join(vector<int> &offs, vector<vector<int>> partiesBy, c
     for (int i = 0; i < sizeOffers; i++) {
         // iterating the party numbers in that coalition
         int sizeCoalition=partiesBy[i].size();
-        for (int j = 0; i <sizeCoalition; i++) {
+        for (int j = 0; j <sizeCoalition; j++) {
             curParty = partiesBy[i][j];
             sum += g.getMandates(curParty);
         }
