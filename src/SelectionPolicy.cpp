@@ -8,10 +8,10 @@ int MandatesSelectionPolicy:: select (vector<int> neighbors, Simulation& sim, in
     int neighborsSize=neighbors.size();
     for(int i=0;i<neighborsSize;i++)
     {
-        if(sim.getParty(i).getMandates()>maxMandates)
+        if(sim.getParty(neighbors[i]).getMandates()>maxMandates)
         {
             maxParty=neighbors[i];
-            maxMandates=sim.getParty(i).getMandates();
+            maxMandates=sim.getParty(neighbors[i]).getMandates();
         }
     }
     return maxParty;
